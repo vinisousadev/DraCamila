@@ -1932,7 +1932,7 @@ html {
   }
 }
 
-/* Ajustes para telas grandes */
+/* Ajustes para telas grandes
 @media (min-width: 1400px) {
   .banner,
   .services,
@@ -1941,7 +1941,7 @@ html {
     max-width: 1400px;
     margin: 0 auto;
   }
-}
+} */
 
 /* Melhorar acessibilidade */
 @media (prefers-reduced-motion: reduce) {
