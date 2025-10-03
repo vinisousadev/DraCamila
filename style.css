@@ -167,14 +167,16 @@ nav {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  padding: 100px 50px 30px;
+  /* padding: 100px 50px 30px; */
   margin: 0;
   position: relative;
   background-clip: padding-box;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .banner.visible {
