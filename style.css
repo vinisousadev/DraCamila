@@ -1,0 +1,1965 @@
+/* Reset e Estilos Globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-behavior: smooth 5s;
+}
+
+body {
+  background-image: url(./6638486_3392075.jpg);
+  background-size: cover;
+  background-attachment: fixed; /* Opcional: para efeito parallax */
+  background-position: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+root {
+  --font-dark: #f6f6f6;
+  --font-light: black;
+  --brown-bg: #351d13;
+}
+
+.header {
+  background: #d3b680;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-style: solid;
+  border-color: #d3b680;
+  border-width: 0px 0px 1px 0px;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  display: flex;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
+  height: 80px;
+}
+
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  margin: 0 auto;
+  background: transparent;
+  width: 100%;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+  background: transparent;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  background: transparent;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin-left: 30px;
+  background: transparent;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: transparent;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* Menu Hambúrguer */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Efeito hover completo - transforma em botão */
+.nav-links a:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #d4af37, #f1d27a);
+  border-color: #d4af37;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transform: translateY(-3px);
+}
+
+.nav-links a::after {
+  /* Remove a linha animada nesta versão */
+  display: none;
+}
+
+.btn {
+  background-color: #75aab9;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 50px 30px;
+  margin: 0;
+  position: relative;
+  background-clip: padding-box;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.banner.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.banner-content {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-content p {
+  max-width: 700px;
+}
+
+.banner-img img {
+  height: auto;
+  width: 500px;
+  background-color: transparent;
+  display: flex;
+  position: relative;
+}
+
+.banner-img {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner h1 {
+  margin-bottom: 20px;
+  line-height: 1.2;
+  flex-direction: row;
+  color: #cfa88c;
+  font-family: "Lato", serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem); /* ajusta conforme tela */
+}
+
+.banner h1 span {
+  color: #d4af37;
+}
+
+.banner p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-family: "Lato", serif;
+  font-weight: 400;
+  font-style: italic; /* Opcional: para um toque sofisticado */
+  letter-spacing: 3px; /* Destaque sutil */
+  color: #cfa88c;
+}
+
+/* Services Section */
+.services {
+  padding: 60px 50px;
+  text-align: center;
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 0.6s ease-out;
+  z-index: 10;
+  margin: auto;
+  position: relative;
+}
+
+.services.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services h2 {
+  font-size: 60px;
+  margin-bottom: 60px;
+  color: #333;
+  position: relative;
+}
+
+.divisor {
+  color: #d4af37;
+  position: absolute; /* Posiciona relativo ao .banner */
+  bottom: 0; /* Cola na base do .banner */
+  left: 49.5%; /* Centraliza horizontalmente */
+  transform: translateY(20px);
+  background: transparent; /* Fundo branco para sobrepor a borda */
+  padding: 0; /* Espaço ao redor do símbolo */
+  z-index: 1;
+}
+
+.divisor p {
+  margin: 0; /* Remove margem padrão do <p> */
+  font-size: 33px; /* Tamanho do símbolo */
+  color: #d4af37; /* Cor dourada */
+}
+.services h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #d4af37;
+  margin: 15px auto;
+}
+
+.services-container {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  box-sizing: border-box; /* Garante que padding não afete a largura total */
+  /* Largura fixa ou use porcentagem */
+  min-height: 400px; /* Altura mínima consistente */
+  width: 100%;
+  max-width: 350px; /* deixa limite mas permite encolher */
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.service-card p {
+  color: #666;
+  margin-bottom: 20px; /* Espaçamento consistente entre parágrafos */
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* ================================ 
+   RESPONSIVIDADE COMPLETA 
+================================ */
+
+/* Tablet e Desktop Pequeno */
+@media (max-width: 1024px) {
+  nav {
+    padding: 20px 30px;
+  }
+
+  .logo-img {
+    width: 150px;
+    height: 75px;
+  }
+
+  .banner {
+    padding: 100px 30px 20px;
+    flex-direction: column;
+    text-align: center;
+    min-height: 70vh;
+  }
+
+  .banner-content {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .banner-img {
+    max-width: 400px;
+    margin: 20px auto;
+  }
+
+  .logocamila {
+    max-width: 250px;
+    margin: 20px auto 0;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 80px;
+    flex-direction: column;
+    background: #d3b680;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    gap: 0;
+    padding: 0;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 20px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+  }
+
+  .logo-img {
+    width: 120px;
+    height: 60px;
+  }
+
+  .banner {
+    padding: 100px 20px 20px;
+    min-height: 70vh;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    margin-bottom: 15px;
+  }
+
+  .banner p {
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  .banner-content p {
+    max-width: 100%;
+  }
+
+  .banner-img {
+    max-width: 300px;
+    margin: 20px auto;
+  }
+
+  .banner-img img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .logocamila {
+    max-width: 200px;
+    margin: 20px auto;
+  }
+
+  .services {
+    padding: 40px 20px;
+  }
+
+  .services h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 40px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 15px;
+  }
+
+  .logo-img {
+    width: 100px;
+    height: 50px;
+  }
+
+  .banner {
+    padding: 100px 15px 15px;
+    min-height: 60vh;
+  }
+
+  .banner h1 {
+    font-size: clamp(1.8rem, 10vw, 2.2rem);
+    line-height: 1.1;
+  }
+
+  .banner p {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  .banner-img {
+    max-width: 250px;
+  }
+
+  .banner-img img {
+    max-width: 250px;
+  }
+
+  .logocamila {
+    max-width: 150px;
+  }
+
+  .services {
+    padding: 30px 15px;
+  }
+
+  .services h2 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+    margin-bottom: 30px;
+  }
+}
+
+/* Container principal */
+.treatment-cards-container {
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Estilo base dos cartões */
+.treatment-card {
+  display: flex;
+  min-height: 500px;
+  max-width: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+  background-color: #d3b680;
+}
+
+.treatment-card:hover {
+  transform: translateY(-10px) scale(1.06);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Cabeçalho */
+.treatment-header {
+  padding: 20px;
+  text-align: center;
+  background: #d3b680;
+  border-style: solid;
+  border-color: black;
+  border-width: 0px 0px 1.5px 0px;
+}
+
+.facial .treatment-header {
+  background: #d3b680;
+}
+
+.drainage .treatment-header {
+  background: #d3b680;
+}
+
+/* Cor específica para Botox */
+.botox .treatment-header {
+  background: #d3b680;
+}
+
+.flacidez {
+  background: #d3b680;
+}
+
+.harmony {
+  background: #d3b680;
+}
+
+.botox {
+  background: #d3b680;
+}
+
+.drainage {
+  background: #d3b680;
+}
+
+.filling {
+  background: #d3b680;
+}
+
+.lifting {
+  background: #d3b680;
+}
+
+.ozone {
+  background: #d3b680;
+}
+
+.radio {
+  background: #d3b680;
+}
+
+.lips {
+  background: #d3b680;
+}
+
+.treatment-header h2 {
+  color: black;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Conteúdo */
+.treatment-content {
+  padding: 25px;
+  background-color: #d3b680;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.slogan {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.benefits li {
+  padding: 10px 0;
+  position: relative;
+  color: black;
+}
+
+.benefits li:before {
+  content: "✓";
+  /* position: absolute;
+  left: ; */
+  color: black;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.quote {
+  font-style: italic;
+  text-align: center;
+  margin: 25px 0;
+  color: black;
+}
+
+/* Botão */
+.appointment-button {
+  display: block;
+  width: 80%;
+  max-width: 250px;
+  margin: auto;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #cf9f3f 0%, #f5e7a1 50%, #cf9f3f 100%);
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 800;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.appointment-button:hover {
+  background: #c19b2e;
+  transform: scale(1.05);
+}
+
+/* Responsividade para Treatment Cards */
+@media (max-width: 1200px) {
+  .treatment-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .treatment-cards-container {
+    grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .treatment-card {
+    max-width: 100%;
+    margin: 0;
+    min-height: auto;
+  }
+
+  .treatment-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .treatment-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .treatment-cards-container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .treatment-card {
+    min-height: 400px;
+  }
+
+  .treatment-header {
+    padding: 15px;
+  }
+
+  .treatment-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .treatment-content {
+    padding: 15px;
+  }
+
+  .slogan {
+    font-size: 1.1rem;
+  }
+}
+
+/* Ajuste opcional para ícone */
+.botox .treatment-header::before {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+/* ESTRUTURA PRINCIPAL */
+.video-presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #d3b680;
+  border-radius: 35px;
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 0.6s ease-out;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.video-presentation.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.text-content {
+  flex: 1;
+  padding: 0 20px;
+  margin: auto;
+  min-width: 300px;
+}
+
+.video-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: #d3b680;
+  flex: 1;
+  max-width: 500px;
+  min-height: 400px;
+  aspect-ratio: 16/9;
+}
+
+/* ESTILOS DE TEXTO */
+.section-subtitle {
+  color: black;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: black;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.highlight-text {
+  font-size: 1.1rem;
+  color: black;
+  margin-bottom: 30px;
+  border-left: 3px solid black;
+  padding-left: 20px;
+}
+
+/* LISTA DE BENEFÍCIOS */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.benefits-list li {
+  margin-bottom: 15px;
+  padding-left: 35px;
+  position: relative;
+  color: black;
+  font-size: 1.05rem;
+}
+
+.benefits-list .icon {
+  position: absolute;
+  left: 0;
+  color: black;
+  font-size: 1.2rem;
+}
+
+/* BOTÃO */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #cf9f3f 0%, #f5e7a1 50%, #cf9f3f 100%);
+  color: black;
+  padding: 14px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cta-button:hover {
+  background: #c19b2e;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* ESTILOS DO VÍDEO */
+.clinic-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: all 0.5s;
+  object-fit: cover;
+}
+
+.play-button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0.9;
+}
+
+.play-button:hover {
+  background: white;
+  opacity: 1;
+}
+
+/* Responsividade para Video Presentation */
+@media (max-width: 1024px) {
+  .video-presentation {
+    margin: 30px 20px;
+    padding: 25px;
+  }
+
+  .text-content {
+    padding: 0 15px;
+  }
+
+  .video-container {
+    max-width: 450px;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-presentation {
+    flex-direction: column;
+    margin: 30px 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .text-content {
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: center;
+    min-width: auto;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .highlight-text {
+    border-left: none;
+    padding-left: 0;
+    border-bottom: 2px solid #d4af37;
+    display: inline-block;
+  }
+
+  .benefits-list li {
+    text-align: center;
+  }
+
+  .video-container {
+    max-width: 100%;
+    min-height: 250px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-presentation {
+    margin: 20px 10px;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .text-content {
+    margin-bottom: 25px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .highlight-text {
+    font-size: 1rem;
+  }
+
+  .video-container {
+    min-height: 200px;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+.location {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+/* Container Principal */
+.clinic-location {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  width: 100%;
+}
+
+/* Estilo do Mapa */
+.map-container {
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+}
+
+.map-contact-container {
+  display: flex;
+  gap: 30px;
+  align-items: stretch; /* Faz os dois containers terem a mesma altura */
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border: none;
+  filter: grayscale(10%) contrast(105%);
+}
+
+.contact-info {
+  border-top: 1px dashed #ddd;
+  padding-top: 15px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.contact-info a,
+.contact-info p {
+  color: #555;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.contact-info a:hover {
+  color: #d4af37;
+}
+
+/* Seção FALE CONOSCO - Versão Dividida */
+.contact-section {
+  min-width: 350px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-header {
+  padding: 25px 30px 15px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.contact-header h2 {
+  color: #d4af37;
+  margin: 0;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.contact-content {
+  display: flex;
+}
+
+.about-clinic {
+  padding: 20px 30px;
+  border-right: 1px dashed rgba(212, 175, 55, 0.3);
+  flex: 1;
+}
+
+.clinic-hours {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(212, 175, 55, 0.3);
+}
+
+.clinic-hours h3 {
+  color: #d4af37;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours-list li {
+  display: flex;
+  margin-bottom: 10px;
+  color: #555;
+  gap: 20px;
+}
+
+.hours-list li span:first-child {
+  font-weight: 500;
+}
+
+.hours-list li span:last-child {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Destaque para o dia atual (opcional) */
+.hours-list li.highlight {
+  color: #d4af37;
+}
+
+.hours-list li.highlight span {
+  color: inherit;
+  font-weight: 600;
+}
+
+.contact-info-wrapper {
+  padding: 20px 30px;
+  flex: 1;
+}
+
+.location-description {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.contact-details {
+  margin-top: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.contact-item i {
+  color: #d4af37;
+  width: 20px;
+  text-align: center;
+}
+
+.social-title {
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-media {
+  display: flex;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.social-icon:hover {
+  background: #d4af37;
+  color: white;
+  transform: translateY(-2px);
+  border-color: #d4af37;
+}
+
+/* Responsividade para Location Section */
+@media (max-width: 1024px) {
+  .location {
+    padding: 30px 15px;
+  }
+
+  .clinic-location {
+    padding: 0 15px;
+  }
+
+  .map-contact-container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .location {
+    padding: 20px 10px;
+  }
+
+  .clinic-location {
+    padding: 0 10px;
+  }
+
+  .map-contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .map-container {
+    min-width: auto;
+    order: 2;
+  }
+
+  .contact-section {
+    order: 1;
+    min-width: auto;
+  }
+
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .about-clinic {
+    border-right: none;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+    padding-bottom: 25px;
+  }
+
+  .contact-info-wrapper {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .location {
+    padding: 15px 5px;
+  }
+
+  .clinic-location {
+    padding: 0 5px;
+  }
+
+  .contact-section {
+    border-radius: 8px;
+  }
+
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .social-media {
+    justify-content: center;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+/* Responsivo */
+@media (max-width: 768px) {
+  .hours-overlay {
+    position: static;
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .map-container {
+    height: auto;
+    aspect-ratio: 16/9;
+  }
+}
+
+.floating-button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.stats-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px auto;
+  padding: 0 20px;
+  font-family: "Lato", sans-serif;
+  background-size: cover;
+  max-width: 1200px;
+}
+
+.stat-card {
+  background-color: transparent;
+  padding: 30px;
+  width: 300px;
+  min-width: 280px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  background: linear-gradient(135deg, #cf9f3f 0%, #f5e7a1 50%, #cf9f3f 100%);
+  border-radius: 10%;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #cf9f3f 0%, #f5e7a1 50%, #cf9f3f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number span {
+  font-size: 30px;
+  background-color: transparent;
+  color: black;
+}
+
+.stat-title {
+  font-size: 20px;
+  color: #555;
+  line-height: 1.4;
+  background-color: transparent;
+}
+
+.typewriter {
+  position: relative;
+  display: inline-block;
+}
+
+.typewriter::after {
+  content: "|";
+  position: absolute;
+  right: -5px;
+  color: #cf9f3f;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Responsividade para Stats Section */
+@media (max-width: 1024px) {
+  .stats-container {
+    margin: 40px auto;
+    padding: 0 15px;
+  }
+
+  .stat-card {
+    width: calc(50% - 10px);
+    min-width: 250px;
+    padding: 25px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    margin: 30px auto;
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .stat-card {
+    width: 100%;
+    min-width: 250px;
+    padding: 25px 20px;
+  }
+
+  .stat-number {
+    font-size: 26px;
+  }
+
+  .stat-title {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-container {
+    margin: 20px auto;
+    padding: 0 5px;
+    gap: 10px;
+  }
+
+  .stat-card {
+    width: 100%;
+    min-width: 200px;
+    padding: 20px 15px;
+    border-radius: 15px;
+  }
+
+  .stat-number {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .stat-title {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+.logocamila {
+  position: relative;
+  max-width: 250px;
+  height: auto;
+  flex: 0 0 auto;
+  margin: 0 auto;
+}
+
+.logocamila img {
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  object-fit: contain;
+}
+
+.before-after-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 1.5s ease-out;
+  padding: 3rem 1rem;
+  margin: 2.5rem 0;
+}
+.before-after-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Container principal */
+.static-comparison {
+  display: flex; /* Organiza as imagens lado a lado */
+  width: 100%;
+  height: 400px; /* Altura fixa - ajuste conforme necessário */
+  border-radius: 10px; /* Mantém as bordas arredondadas */
+}
+
+/* Imagens divididas igualmente */
+.before-image,
+.after-image {
+  width: 50%; /* Cada imagem ocupa metade do espaço */
+  height: 100%;
+  object-fit: cover; /* Cobrir o espaço sem distorcer */
+  object-position: center; /* Foco no centro */
+}
+
+.before-after-title {
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  margin-bottom: 60px;
+  color: #333;
+  position: relative;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.before-after-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Estilo dos cards (opcional) */
+.static-comparison {
+  display: flex;
+  width: 100%;
+  height: 450px; /* Aumentei a altura para melhor visualização */
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+/* Efeito hover no container */
+.static-comparison:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Melhorias nas imagens */
+.before-image,
+.after-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.5s ease;
+  filter: brightness(1.2);
+}
+
+/* Efeito hover nas imagens */
+.before-image:hover,
+.after-image:hover {
+  filter: brightness(1.05);
+  transform: scale(1.02);
+}
+
+/* Títulos das imagens */
+.image-label {
+  position: absolute;
+  bottom: 20px;
+  padding: 8px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  z-index: 10;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.before-label {
+  left: 20px;
+}
+
+.after-label {
+  right: 20px;
+}
+
+/* Título principal - versão melhorada */
+.before-after-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color: #351d13;
+  position: relative;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.before-after-title:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, transparent);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Container dos cards */
+.before-after-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Cards - versão premium */
+.comparison-card {
+  width: 100%; /* Metade do container menos metade do gap */
+  max-width: 350px;
+  height: auto;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85);
+  position: relative;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(212, 175, 55, 0.1);
+  color: #e8e1d9;
+}
+
+/* Efeito hover premium */
+.comparison-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.6), 0 12px 40px rgba(0, 0, 0, 0.4),
+    inset 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+/* Área de informações - versão premium */
+.client-info {
+  padding: 2.2rem;
+  position: relative;
+  overflow: hidden;
+  background: #cfa88c;
+}
+
+/* Efeito de brilho sutil - versão melhorada */
+.client-info::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 70%
+  );
+  z-index: 1;
+  animation: shine 8s infinite;
+}
+
+@keyframes shine {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30%, 30%);
+  }
+  50% {
+    transform: translate(-20%, -20%);
+  }
+  75% {
+    transform: translate(20%, -30%);
+  }
+}
+
+/* Tipografia premium */
+.client-info h3 {
+  color: black;
+  font-size: 1.6rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.client-info p {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.client-info div {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Separador estilizado - versão moderna */
+.client-info div span:not(:last-child)::after {
+  content: "•";
+  color: rgba(0, 0, 0, 0.85);
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+/* Badge de destaque */
+.client-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #d4af37;
+  color: #351d13;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 4;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para Before/After Section */
+@media (max-width: 1024px) {
+  .before-after-section {
+    padding: 2rem 1rem;
+  }
+
+  .before-after-title {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    margin-bottom: 40px;
+  }
+
+  .before-after-container {
+    padding: 15px;
+    gap: 25px;
+  }
+
+  .comparison-card {
+    max-width: 500px;
+  }
+
+  .static-comparison {
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .before-after-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .before-after-title {
+    font-size: clamp(1.6rem, 8vw, 2.5rem);
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+
+  .before-after-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .comparison-card {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .static-comparison {
+    height: 350px;
+  }
+
+  .client-info {
+    padding: 1.8rem;
+  }
+
+  .client-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .client-info p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .before-after-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .before-after-title {
+    font-size: clamp(1.4rem, 10vw, 2rem);
+    margin-bottom: 25px;
+  }
+
+  .before-after-container {
+    padding: 5px;
+    gap: 15px;
+  }
+
+  .comparison-card {
+    border-radius: 12px;
+  }
+
+  .static-comparison {
+    height: 280px;
+    flex-direction: column;
+  }
+
+  .before-image,
+  .after-image {
+    width: 100%;
+    height: 50%;
+  }
+
+  .client-info {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .client-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .client-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .compbuttonsection a {
+    font-size: 1.5rem;
+    padding: 12px 25px;
+  }
+}
+
+/* Manter proporção dos cards em telas grandes */
+@media (min-width: 1400px) {
+  .comparison-card {
+    width: calc(50% - 15px);
+    max-width: none;
+  }
+}
+
+.compbuttonsection {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.compbuttonsection a {
+  background: linear-gradient(135deg, #cf9f3f 0%, #f5e7a1 50%, #cf9f3f 100%);
+  color: black;
+  padding: 14px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.compbuttonsection a:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .static-comparison {
+    height: 300px; /* Reduz altura em mobile */
+  }
+}
+
+.comparison-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Base (mobile: 1 coluna) */
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* Tablet: 2 colunas */
+@media (min-width: 768px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 colunas */
+@media (min-width: 1025px) {
+  .services-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================================ 
+   ESTILOS GLOBAIS RESPONSIVOS 
+============================= */
+
+/* Prevenir overflow horizontal */
+body {
+  overflow-x: hidden;
+}
+
+/* Melhorar scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ajustes para texto em telas pequenas */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* Melhor legibilidade dos botões */
+  .appointment-button,
+  .cta-button,
+  .compbuttonsection a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Espaçamentos otimizados */
+  section {
+    padding: 40px 10px;
+  }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container,
+  .services,
+  .video-presentation,
+  .location {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Ajustes para telas grandes */
+@media (min-width: 1400px) {
+  .banner,
+  .services,
+  .video-presentation,
+  .before-after-section {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* Melhorar acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Altura de viewport móvel */
+@supports (height: 100dvh) {
+  .banner {
+    min-height: 100dvh;
+  }
+
+  @media (max-width: 768px) {
+    .banner {
+      min-height: 100dvh;
+    }
+  }
+}
