@@ -174,8 +174,8 @@ nav {
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
   flex-wrap: wrap;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .banner.visible {
