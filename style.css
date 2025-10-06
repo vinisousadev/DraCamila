@@ -164,7 +164,6 @@ nav {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* min-height: 80vh; */
   display: flex;
   align-items: center;
   /* padding: 100px 50px 30px; */
@@ -1954,12 +1953,6 @@ html {
     scroll-behavior: auto !important;
   }
 }
-
-/* Altura de viewport móvel
-@supports (height: 100dvh) {
-  .banner {
-    min-height: 100dvh;
-  } */
 
   @media (max-width: 768px) {
     .banner {
