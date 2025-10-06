@@ -788,7 +788,7 @@ footer {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   background: #d3b680;
   flex: 1;
-  max-width: 500px;
+  max-width: 600px;
   min-height: 400px;
   aspect-ratio: 16/9;
 }
