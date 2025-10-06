@@ -165,7 +165,6 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   /* min-height: 80vh; */
-  left: 50px;
   display: flex;
   align-items: center;
   /* padding: 100px 50px 30px; */
@@ -200,6 +199,7 @@ nav {
   height: auto;
   width: 500px;
   background-color: transparent;
+  left: 70px;
   display: flex;
   position: relative;
 }
