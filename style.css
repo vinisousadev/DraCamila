@@ -164,7 +164,8 @@ nav {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 80vh;
+  /* min-height: 80vh; */
+  left: 50px;
   display: flex;
   align-items: center;
   /* padding: 100px 50px 30px; */
@@ -530,6 +531,7 @@ footer {
   max-width: 1400px;
   visibility: visible;
   opacity: 1;
+  display: flex;
 }
 
 /* Estilo base dos cartões */
@@ -1932,7 +1934,7 @@ html {
   }
 }
 
-/* Ajustes para telas grandes
+Ajustes para telas grandes
 @media (min-width: 1400px) {
   .banner,
   .services,
@@ -1941,7 +1943,7 @@ html {
     max-width: 1400px;
     margin: 0 auto;
   }
-} */
+}
 
 /* Melhorar acessibilidade */
 @media (prefers-reduced-motion: reduce) {
@@ -1953,11 +1955,11 @@ html {
   }
 }
 
-/* Altura de viewport móvel */
+/* Altura de viewport móvel
 @supports (height: 100dvh) {
   .banner {
     min-height: 100dvh;
-  }
+  } */
 
   @media (max-width: 768px) {
     .banner {
